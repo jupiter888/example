@@ -1,0 +1,61 @@
+<?php
+//methods
+class Textbooks
+{
+    //member variables
+    var $bookPrice;
+    var $bookTitle;
+    
+    //member functions
+    function setBookPrice($value)
+    {
+    $this->bookPrice= $value;
+    }
+    
+    function getBookPrice()
+    {
+        echo "$" . $this->bookPrice . "<br>";
+    }
+    
+    function setBookTitle($value)
+    {
+    $this->bookTitle=$value;
+    }
+    
+    function getBookTitle()
+    {
+    echo $this->bookTitle . "<br>";
+    }
+    
+    //custom method
+    //not setting and getting
+    
+    function calculateDiscount($bookPrice)
+    {
+        echo "If you order 50 books you get 10% off per book: $" . 0.1 * $bookPrice. " per book! <br><br><BR>";
+    }
+}
+//out of the class, we create objects
+//instantiation uses "new" keyword
+$webdev = new Textbooks;
+$database = new TextBooks;
+$programming = new Textbooks;
+
+$webdev->setBookTitle("Intro to Javascript");
+$webdev->setBookPrice(35);
+$database->setBookTitle("Intro to DB");
+$database->setBookPrice(45);
+$programming->setBookTitle("Intro to C#");
+$programming->setBookPrice("50");
+
+$webdev->getBookTitle();
+$webdev->getBookPrice();
+$webdev->calculateDiscount(35);
+$database->getBookTitle();
+$database->getBookPrice();
+$database->calculateDiscount(45);
+$programming->getBookTitle();
+$programming->getBookPrice();
+$programming->calculateDiscount(50);
+                  
+?>
